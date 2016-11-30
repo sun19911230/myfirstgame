@@ -4,7 +4,7 @@
 #include "graphics.h"
 #include "globals.h"
 Graphics::Graphics() {
-	SDL_CreateWindowAndRenderer(globals::SCREEN_LENGTH,globals::SCREEN_WIDTH,0,&this->_window,&this->_renderer);
+	SDL_CreateWindowAndRenderer(globals::SCREEN_WIDTH,globals::SCREEN_LENGTH,0,&this->_window,&this->_renderer);
 	SDL_SetWindowTitle(this->_window,"Miao");
 }
 

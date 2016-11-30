@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-class Charactor;
+class AnimatedCharacter;
 class Graphics;
 class Game {
 public:
@@ -10,7 +10,7 @@ private:
 	void gameLoop();
 	void draw(Graphics &graphics);
 	void update(float elapsedTime);
-	Charactor * _player;
+	AnimatedCharacter * _player;
 };
 
 #endif

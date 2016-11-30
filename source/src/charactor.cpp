@@ -20,7 +20,8 @@ Charactor::~Charactor() {}
 
 
 void Charactor::draw(Graphics &graphics, int x, int y) {
-	SDL_Rect destinationRectangle = {x,y,this->_sourceRect.w * globals::CHARACTOR_SCALE,this->_sourceRect.h * globals::CHARACTOR_SCALE};
+	SDL_Rect destinationRectangle = {x,y,(int)(this->_sourceRect.w * globals::CHARACTOR_SCALE),
+			(int)(this->_sourceRect.h * globals::CHARACTOR_SCALE)};
 	graphics.blitSurface(this->_charSheet, &this->_sourceRect, &destinationRectangle);
 }
 

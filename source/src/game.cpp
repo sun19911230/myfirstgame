@@ -2,7 +2,7 @@
 #include "game.h"
 #include "graphics.h"
 #include "input.h"
-#include "charactor.h"
+#include "animatedCharacter.h"
 
 namespace {
 const int FPS =50;
@@ -23,7 +23,9 @@ void Game::gameLoop(){
 	Input input;
 	SDL_Event event;
 
-	this->_player = new Charactor(graphics, "content/myChar.png", 129, 129, 32, 32,100,100);
+	this->_player = new AnimatedCharacter(graphics, "content/CH20153.bmp", 0, 0, 256, 256,0,0,100);
+	this->_player->setupAnimations();
+	this->_player->playAnimation("fight");
 	int LAST_UPDATE_TIME = SDL_GetTicks();
 	//Start the game loop
 	while(true) {
@@ -53,8 +55,10 @@ void Game::gameLoop(){
 }
 void Game::draw(Graphics &graphics){
 	graphics.clear();
-	this->_player->draw(graphics,100,100);
+	this->_player->draw(graphics,0,0);
 	graphics.flip();
 
 }
-void Game::update(float elapsedTime){}
+void Game::update(float elapsedTime){
+	this->_player->update(elapsedTime);
+}

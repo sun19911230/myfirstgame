@@ -11,7 +11,7 @@ public:
 	Graphics();
 	~Graphics();
 	/* SQL_Surface* loadImage
-	 * Loads ab image into the _spriteSheets map if it does not exist
+	 * Loads an image into the _spriteSheets map if it does not exist
 	 * return the image from the map regardless of whether or not it was just loaded
 	 */
 	SDL_Surface * loadImage (const std::string & filePath);
